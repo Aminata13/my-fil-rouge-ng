@@ -1,0 +1,24 @@
+<div class="example-container">
+  <div class="form-container">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label> Login
+        </mat-label>
+        <input matInput formControlName="username" required>
+        <mat-error *ngIf="loginForm.controls.username.touched && loginForm.controls.username.invalid">
+          <span *ngIf="loginForm.controls.username.errors?.required">Ce champ est obligatoire.</span>
+          <span *ngIf="loginForm.controls.username.errors?.pattern">Ce champ est invalide.</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label> Mot de Passe
+        </mat-label>
+        <input matInput formControlName="password" type="password">
+        <mat-error *ngIf="loginForm.controls.password.touched && loginForm.controls.password.invalid">
+          <span *ngIf="loginForm.controls.password.errors?.required">Ce champ est obligatoire.</span>
+        </mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">Se connecter</button>
+    </form>
+  </div>
+</div>

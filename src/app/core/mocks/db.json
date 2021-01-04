@@ -1,0 +1,59 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "id": 2,
+      "username": "apprenant",
+      "password": "password"
+    },
+    {
+      "id": 3,
+      "username": "formateur",
+      "password": "password"
+    },
+    {
+      "id": 4,
+      "username": "cm",
+      "password": "password"
+    },
+    {
+      "id": 5,
+      "username": "Magneta",
+      "password": "password"
+    },
+    {
+      "id": 6,
+      "username": "RubberMan",
+      "password": "password"
+    },
+    {
+      "id": 7,
+      "username": "Dynama",
+      "password": "password"
+    },
+    {
+      "id": 8,
+      "username": "Dr IQ",
+      "password": "password"
+    },
+    {
+      "id": 9,
+      "username": "Magma",
+      "password": "password"
+    },
+    {
+      "id": 10,
+      "username": "Tornado",
+      "password": "password"
+    },
+    {
+      "email": "olivier@mail.com",
+      "password": "$2a$10$KzkkVQXNbMPCmFfdQ2nngOw/jzF3QEWZOaPwBXtPQrRUsf2ZjW0U6",
+      "id": 11
+    }
+  ]
+}

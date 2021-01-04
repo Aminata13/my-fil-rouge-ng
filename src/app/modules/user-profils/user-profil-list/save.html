@@ -1,0 +1,49 @@
+<mat-card>
+  <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Admin" #input>
+  </mat-form-field>
+
+  <div class="mat-elevation-z8 table-container">
+    <table mat-table [dataSource]="dataSource" aria-describedby="list of user profils" matSort>
+
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> ID </th>
+        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+      </ng-container>
+
+      <!-- Libelle Column -->
+      <ng-container matColumnDef="libelle">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> Libelle </th>
+        <td mat-cell *matCellDef="let row"> {{row.libelle|uppercase}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> Actions </th>
+        <td mat-cell *matCellDef="let row">
+          <button mat-mini-fab class="fab-edit">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-mini-fab class="fab-delete" (click)="deleteUser()">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="2">Pas de résultats avec le terme "{{input.value}}"</td>
+      </tr>
+    </table>
+    <button mat-raised-button class="btn-add">Ajouter
+      <mat-icon>add</mat-icon>
+    </button>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+  </div>
+  </mat-card>
